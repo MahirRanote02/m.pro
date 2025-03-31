@@ -10,10 +10,9 @@ def check_password_strength(password):
     # Integer to store password length
     length = len(password)
     
-    # List of special characters for reference
     special_chars = list(string.punctuation)
     
-    # Check password strength
+    # Check Password Strength
     if length < 6:
         return "Weak", "Try using at least 6 characters, including numbers and special characters."
     elif has_upper and has_lower and has_digit and has_special:
@@ -22,20 +21,19 @@ def check_password_strength(password):
         return "Medium", "Try adding uppercase letters, numbers, and special characters for a stronger password."
 
 def password_checker():
-    password_history = []  # List to store previous passwords
+    password_history = []  
     
     while True:
         password = input("Enter your password: ")
         strength, feedback = check_password_strength(password)
         password_history.append(password)
         
-        print(f"Password Strength: {strength}")
+        print(f"Pass Strength: {strength}")
         print(feedback)
         
         if strength == "Strong":
-            break  # Exit loop if password is strong
+            break 
     
-    print("Password history:", password_history)  # Display entered passwords for reference
+    print("Pass History:", password_history)  
 
-# Run the password checker
 password_checker()
